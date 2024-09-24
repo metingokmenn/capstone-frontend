@@ -1,0 +1,107 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="outer-container">
+                    <div class="filter-container d-flex flex-column align-items-center">
+                      <form #filterForm="ngForm" (ngSubmit)="applyFilters()" class="d-flex flex-column flex-md-row align-items-center">
+                        <div>
+                          <label for="start-date">Starting Date:</label>
+                          <input type="date" id="start-date" name="start-date" [(ngModel)]="startDate">
+                        </div>
+                        <div class="ml-md-3">
+                          <label for="end-date">End Date:</label>
+                          <input type="date" id="end-date" name="end-date" [(ngModel)]="endDate">
+                        </div>
+                        <div class="dropdown-form-group ml-md-3 d-flex align-items-center select-wrapper">
+                          <label for="store-id" class="store-id-label">Store ID:</label>
+                          <input type="text" id="store-id" name="store-id" class="form-control" [(ngModel)]="selectedStoreId">
+                          <label *ngIf="showStoreLabel" class="ml-2">{{ storeLabelText }}</label>
+                        </div>
+                        <div class="ml-md-3 mt-3 mt-md-0 d-flex align-items-center">
+                          <button type="submit" class="btn btn-primary">Apply Filter</button>
+                          <button type="button" class="btn btn-secondary ml-2" (click)="clearFilters()">Clear</button>
+                        </div>
+                      </form>
+                      <div class="mt-3">
+                        <label *ngIf="storeName" style="color: black; font-weight: bold;">{{ storeName }}</label>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card card-chart">
+                    <div class="card-header card-header-success">
+                        <div class="ct-chart" id="ageBarChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Age Analysis</h4>
+                        <p class="card-category">It is a graph showing the total number of customers of a store according to certain age groups. It can be filtered by date and store.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header card-header-info">
+                        <div class="ct-chart" id="horizontalBarChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Gender Analysis</h4>
+                        <p class="card-category">A chart showing the total number of customers of a store by gender. It can be filtered by date and store.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-blue">
+                        <div class="ct-chart" id="multiLineChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Age and Gender Analysis</h4>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="turquoise-box"></div>
+                                <p class="legend-description">Men</p>
+                            </div>
+                            <div class="legend-item">
+                                <div class="pink-box"></div>
+                                <p class="legend-description">Women</p>
+                            </div>
+                        </div>
+                        <p class="card-category">It is a graph showing the total number of customers of a store by gender of certain age groups. It can be filtered by date and store.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="lineChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Total Customer Analysis</h4>
+                        <p class="card-category">It is a graph showing the total number of customers of a store in the previous year by month. It can be filtered by store.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <div class="ct-chart" id="secondLineChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Correctness Analysis</h4>
+                        <p class="card-category">It is a graph showing the changes in the accuracy rates of age and gender analyzes. It can be filtered by store.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

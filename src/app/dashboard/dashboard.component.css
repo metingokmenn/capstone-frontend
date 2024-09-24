@@ -1,0 +1,126 @@
+.card {
+    width: calc(50% - 20px); /* Kartın genişliği */
+    height: 300px;
+    margin-bottom: 20; /* Kartın yüksekliği */
+  }
+  
+  .card-body {
+    height: 200px; /* İçerik kutusunun yüksekliği */
+  }
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.filter-container label {
+    margin-right: 10px; /* Öğeler arasında boşluk bırakmak için */
+}
+
+.filter-container input[type="date"] {
+    padding: 8px 16px; /* Daha belirgin hale getirmek için */
+    margin-right: 10px; /* Giriş alanları arasında boşluk bırakmak için */
+    border: 1px solid #ccc; /* Kenar çizgisi eklemek */
+    border-radius: 4px; /* Yuvarlatılmış köşeler */
+}
+
+.filter-container button {
+    padding: 8px 16px; /* Daha belirgin hale getirmek için */
+    border: 1px solid #ccc; /* Kenar çizgisi eklemek */
+    border-radius: 4px; /* Yuvarlatılmış köşeler */
+    background-color: #007bff; /* Arka plan rengi */
+    color: #fff; /* Yazı rengi */
+    cursor: pointer; /* İşaretçi türü */
+    transition: background-color 0.3s ease; /* Düğme renginin değişim hızı ve yumuşaklığı */
+}
+
+.filter-container button:hover {
+    background-color: #0056b3; /* Fare üzerine gelindiğinde arka plan rengi */
+}
+
+.outer-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+/* Kutular ve açıklamaların stilini tanımlayalım */
+.legend {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.turquoise-box, .pink-box {
+    width: 20px; /* İstenilen genişlik */
+    height: 20px; /* İstenilen yükseklik */
+    margin-right: 10px; /* Kutular arasındaki boşluk */
+}
+
+.turquoise-box {
+    background-color: red; /* Beyaz renk */
+}
+
+.pink-box {
+    background-color:#ff9800; /* Turkuaz renk */
+}
+
+/* Açıklamaların stilini tanımlayalım */
+.legend-description {
+    margin: 0; /* Açıklamalar arasındaki boşluk */
+}
+
+.select-wrapper {
+    width: 300px; /* İstediğiniz genişliği burada belirleyin */
+}
+
+.select-wrapper select {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card-chart {
+    width: 100%;
+    max-width: 100%;
+    display: flex; 
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+}
+
+.card-header-grey {
+    background-color: #EEEEEE; /* İstediğiniz renk kodunu buraya ekleyin */
+}
+
+
+.card-chart-grey {
+    width: 100%;
+    max-width: 100%;
+    display: flex; 
+    background-color: #EEEEEE;
+  
+}
+
+.card-header-blue{
+    background-color:cornflowerblue}
+
+
+
+
+
+
+

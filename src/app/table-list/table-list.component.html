@@ -1,0 +1,84 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="outer-container">
+      <div class="filter-container d-flex flex-column align-items-center">
+        <form #filterForm="ngForm" (ngSubmit)="applyFilters()" class="d-flex flex-column flex-md-row align-items-center">
+          <div>
+            <label for="start-date">Starting Date:</label>
+            <input type="date" id="start-date" name="start-date" [(ngModel)]="startDate">
+          </div>
+          <div class="ml-md-3">
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="end-date" [(ngModel)]="endDate">
+          </div>
+          <div class="dropdown-form-group ml-md-3 d-flex align-items-center select-wrapper">
+            <label for="store-id" class="store-id-label">Store ID:</label>
+            <input type="text" id="store-id" name="store-id" class="form-control" [(ngModel)]="selectedStoreId">
+            <label *ngIf="showStoreLabel" class="ml-2">{{ storeLabelText }}</label>
+          </div>
+          <div class="ml-md-3 mt-3 mt-md-0 d-flex align-items-center">
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+            <button type="button" class="btn btn-secondary ml-2" (click)="clearFilters()">Clear</button>
+          </div>
+        </form>
+        <div class="mt-3">
+          <label *ngIf="storeName" style="color: black; font-weight: bold;">{{ storeName }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-danger">
+                  
+                    <h4 class="card-title mb-0">Age Detection List</h4>
+                    <div class="d-flex justify-content-end">
+
+                    </div>
+                </div>
+                
+                <script>
+
+                </script>
+                
+                 <!-- servis bağladığımızda accuracy renkleri için js kodu
+                    <script src="js/accuracy.js"></script>
+                  <script>    
+                      document.addEventListener("DOMContentLoaded", function() {
+                          // Tablodaki Accuracy sütunundaki her hücreye erişim sağla
+                          var accuracyCells = document.querySelectorAll(".table tbody td:nth-child(2)");
+                  
+                          // Her hücredeki yüzde değerini al, "%" işaretini kaldır ve sayıya dönüştür
+                          accuracyCells.forEach(function(cell) {
+                              var accuracyText = cell.textContent; // Yüzde değeri metni
+                              var accuracyValue = parseFloat(accuracyText.replace("%", "")); // Yüzde değeri sayıya dönüştür
+                              cell.textContent = accuracyValue; // Yüzde değerini güncelle
+                          });
+                      });
+                  </script> -->
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="text-primary">
+                          <th>ID</th>
+                          <th>Age Group</th>
+                          <th>Gender</th>
+                          <th>Confidence Score</th>
+                          <th>Result Date</th>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of ageDetectionData">
+                            <td>{{ item.resultId }}</td>
+                            <td>{{ item.ageGroup }}</td>
+                            <td>{{ item.gender }}</td>
+                            <td>{{ item.confidenceScore }}</td>
+                            <td>{{ item.timestamp | date:'dd.MM.yyyy HH:mm:ss' }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+          </div>
+         
